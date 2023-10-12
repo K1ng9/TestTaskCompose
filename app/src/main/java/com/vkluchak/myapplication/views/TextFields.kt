@@ -43,12 +43,16 @@ import com.vkluchak.myapplication.ui.theme.WhiteSmoke
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun UserCounterText(viewModel: MainViewModel, animatedVisibility: State<Dp>) {
+fun UserCounterText(
+    viewModel: MainViewModel,
+    animatedKeyboardSlider: State<Dp>,
+    modifier: Modifier = Modifier
+) {
     val userCounter by viewModel.userCounter.collectAsState()
 
     Row(
-        modifier = Modifier
-            .offset(y = animatedVisibility.value)
+        modifier = modifier
+            .offset(y = animatedKeyboardSlider.value)
             .animateContentSize()
             .padding(6.dp),
     ) {
@@ -85,7 +89,7 @@ fun UserCounterText(viewModel: MainViewModel, animatedVisibility: State<Dp>) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun InputTextField(modifier: Modifier) {
+fun InputTextField(modifier: Modifier = Modifier) {
     var text by remember { mutableStateOf("") }
     Column {
         Text(

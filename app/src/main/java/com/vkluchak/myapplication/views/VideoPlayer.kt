@@ -20,6 +20,6 @@ fun VideoPlayer(player: Player) {
         },
         modifier = Modifier
             .fillMaxWidth()
-            .aspectRatio(3 / 3f)
+            .aspectRatio(4 / 4f)
     )
 }

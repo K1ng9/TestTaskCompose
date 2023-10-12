@@ -4,7 +4,8 @@
     <string name="log_in_with_facebook">Log in with Facebook</string>
     <string name="continue_with_apple">Continue with Apple</string>
     <string name="join_as_guest">Join as guest</string>
-    <string name="user_agreement_message">I confirm that I am at least 18 years old. I accept User Agreement.</string>
+    <string name="user_agreement_message">I confirm that I am at least 18 years old. I accept %s.</string>
+    <string name="user_agreement_title">User Agreement</string>
     <string name="users_online">users online</string>
     <string name="first_name_nickname">First name / Nickname</string>
 </resources>

@@ -13,7 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.unit.dp
 import com.vkluchak.myapplication.ui.theme.White
 
@@ -23,7 +23,7 @@ fun LogInButton(
     buttonColor: Color = White,
     contentColor: Color = White,
     text: String,
-    iconResourceId: Int? = null,
+    iconResourceId: Painter? = null,
     onClick: () -> Unit,
 ) {
     Button(
@@ -40,7 +40,7 @@ fun LogInButton(
         Row(modifier) {
             iconResourceId?.let {
                 Image(
-                    painter = painterResource(id = iconResourceId),
+                    painter = iconResourceId,
                     contentDescription = ""
                 )
                 Spacer(modifier = Modifier.width(8.dp))
