@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.vkluchak.myapplication.ui.theme.TestTaskComposeTheme
-import com.vkluchak.myapplication.views.BottomScreens
+import com.vkluchak.myapplication.views.BottomPagerField
 import com.vkluchak.myapplication.views.VideoBox
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -42,20 +42,18 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainView(viewModel: MainViewModel, modifier: Modifier = Modifier) {
-
     Column(
         modifier = modifier
             .fillMaxSize()
             .windowInsetsPadding(WindowInsets.systemBars)
     ) {
-
         val keyboardHeightDp = WindowInsets.ime.getBottom(LocalDensity.current)
         val animatedKeyboardSlider =
-            animateDpAsState(targetValue = -(keyboardHeightDp.dp / 6.5f), label = "")
+            animateDpAsState(targetValue = -(keyboardHeightDp.dp / 3.5f), label = "")
 
         VideoBox(viewModel, animatedKeyboardSlider)
 
-        BottomScreens(modifier, animatedKeyboardSlider)
+        BottomPagerField(modifier, animatedKeyboardSlider)
     }
 }
 

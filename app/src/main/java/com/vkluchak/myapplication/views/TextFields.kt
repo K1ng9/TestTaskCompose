@@ -39,8 +39,6 @@ import com.vkluchak.myapplication.ui.theme.RoyalBlue
 import com.vkluchak.myapplication.ui.theme.White
 import com.vkluchak.myapplication.ui.theme.WhiteSmoke
 
-
-
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun UserCounterText(
@@ -52,7 +50,7 @@ fun UserCounterText(
 
     Row(
         modifier = modifier
-            .offset(y = animatedKeyboardSlider.value)
+            .offset(y = animatedKeyboardSlider.value / 3)
             .animateContentSize()
             .padding(6.dp),
     ) {
@@ -111,6 +109,6 @@ fun InputTextField(modifier: Modifier = Modifier) {
                 cursorColor = RoyalBlue
             ),
             textStyle = LocalTextStyle.current.copy(textAlign = TextAlign.Center)
-          )
+        )
     }
 }

@@ -131,7 +131,7 @@ fun RegistrationPage(modifier: Modifier, onPagerStateChanged: () -> Unit) {
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun BottomScreens(modifier: Modifier, animatedKeyboardSlider: State<Dp>) {
+fun BottomPagerField(modifier: Modifier, animatedKeyboardSlider: State<Dp>) {
     val pagerState = rememberPagerState(0)
     val animationScope = rememberCoroutineScope()
 
@@ -139,7 +139,7 @@ fun BottomScreens(modifier: Modifier, animatedKeyboardSlider: State<Dp>) {
         modifier = Modifier
             .fillMaxSize()
             .background(WhiteSmoke)
-            .offset(y = animatedKeyboardSlider.value),
+            .offset(y = animatedKeyboardSlider.value / 3),
         state = pagerState,
         pageCount = 2,
         userScrollEnabled = false,
@@ -159,7 +159,6 @@ fun BottomScreens(modifier: Modifier, animatedKeyboardSlider: State<Dp>) {
                 }
             }
         }
-
     }
 }
 
