@@ -22,13 +22,6 @@ fun VideoBox(viewModel: MainViewModel, animatedKeyboardSlider: State<Dp>) {
         VideoPlayer(viewModel.player)
 
         Image(
-            painter = painterResource(id = R.drawable.watermark),
-            contentDescription = "",
-            modifier = Modifier
-                .align(Alignment.TopStart)
-        )
-
-        Image(
             painter = painterResource(id = R.drawable.settings),
             contentDescription = "",
             modifier = Modifier
